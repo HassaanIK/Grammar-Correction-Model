@@ -1,9 +1,5 @@
-datasets:
-- jfleg
-language:
-- en
-metrics:
-- accuracy
+datasets: jfleg
+language: en
 pipeline_tag: text2text-generation
 ---
 1) Summary of the Model:
