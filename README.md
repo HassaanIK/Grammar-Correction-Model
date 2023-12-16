@@ -20,6 +20,17 @@ Provide a text input that contains grammatical errors. The model is designed to 
 Output:
 The model generates corrected text, highlighting the corrections made. Additionally, it provides a list of words that were corrected and the overall count of corrections.
 
+'''from transformers import pipeline
+
+# Load the Grammar Correction T5 Model from Hugging Face
+grammar_correction_model = pipeline(task="text2text-generation", model="hassaanik/grammar-correction-model")
+
+# Input text with grammatical errors
+input_text = "They is going to spent time together."
+
+# Get corrected output and details
+grammar_correction_model(input_text, max_length=200, num_beams=5, no_repeat_ngram_size=2)'''
+
 Model Deployment:
 Deploy the model easily using the Hugging Face inference API. Users can leverage the API to integrate the grammar correction capability into their applications, websites, or text processing pipelines.
 
