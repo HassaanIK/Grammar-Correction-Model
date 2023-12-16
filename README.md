@@ -1,6 +1,9 @@
 datasets: -jfleg
+
 language: -en
+
 pipeline_tag: -text2text-generation
+
 ---
 1) Summary of the Model:
 The Grammar Correction T5 Model is based on the T5 (Text-to-Text Transfer Transformer) architecture, leveraging the power of pre-trained models from Hugging Face. The model has been fine-tuned on grammar correction tasks, enabling it to take input text with grammatical errors and provide corrected output, along with a detailed list of corrections and their count.
