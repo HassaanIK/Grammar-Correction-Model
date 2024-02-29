@@ -1,30 +1,30 @@
-datasets: -jfleg
+# Grammar Correction Web App
 
-language: -en
+### Overview
+This project implements a web-based tool for correcting grammatical errors in text using the pretrained `vennify/t5-base-grammar-correction` model. The tool allows users to input text, which is then processed by the model to correct grammar and provide a count of corrected words.
 
-pipeline_tag: -text2text-generation
-
----
-Summary of the Model:
-The Grammar Correction T5 Model is based on the T5 (Text-to-Text Transfer Transformer) architecture, leveraging the power of pre-trained models from Hugging Face. The model has been fine-tuned on grammar correction tasks, enabling it to take input text with grammatical errors and provide corrected output, along with a detailed list of corrections and their count.
-
-Uses of the Model:
+### Uses of the Model
 The primary use case for this model is to enhance the grammatical correctness of input text. It serves as a valuable tool for content creators, writers, and individuals seeking to improve the quality of written content. The model is particularly useful in applications where clear and error-free communication is essential, such as in document preparation, content editing, and educational materials.
 
-How to Use It:
-Using the Grammar Correction T5 Model is straightforward:
+### Project Structure
+- `app.py`: Flask application for the web interface.
+- `model.py`: Contains the `correct_grammar` function for grammar correction.
+- `templates/index.html`: HTML template for the input form.
+- `templates/result.html`: HTML template for displaying the correction result.
 
--Input Format:
-Provide a text input that contains grammatical errors. The model is designed to handle a variety of grammatical issues, including syntax, tense, and word usage errors.
+### How to use
+1. Clone the repository `git clone https://github.com/your-username/grammar-correction-tool.git`.
+2. Install the dependencies `pip install -r requirements.txt`.
+3. Run the Flask application `python app.py`.
 
--Output:
-The model generates corrected text, highlighting the corrections made. Additionally, it provides a list of words that were corrected and the overall count of corrections.
-
--Model Deployment:
-Deploy the model easily using the Hugging Face inference API. Users can leverage the API to integrate the grammar correction capability into their applications, websites, or text processing pipelines.
-
-By incorporating the Grammar Correction T5 Model, users can enhance the accuracy and clarity of written content, ultimately improving the overall quality of text-based communication.
-
+### Functionality
+- The `correct_grammar` function in model.py takes input text and uses the `vennify/t5-base-grammar-correction` model to correct grammar.It returns the corrected text, a list of corrected words, and the count of corrected words.
+- The main functionality of the model.py includes:
+  - Initializing the T5 grammar correction model (`vennify/t5-base-grammar-correction`) using `HappyTransformer`.
+  - Defining the `correct_grammar` function, which takes input text, the initialized model, and beam settings as arguments.
+  - Generating corrected text from the grammar model using the `generate_text` method.
+  - Extracting original and corrected text, calculating differences between them, and extracting corrected words.
+  - Returning the corrected text, corrected words, and count of corrected words.
 
 ## Usage
 
