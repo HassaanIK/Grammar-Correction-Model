@@ -1,0 +1,1 @@
+model_link = "https://huggingface.co/hassaanik/grammar-correction-model/blob/main/model.safetensors"
