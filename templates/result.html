@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grammar Correction Result</title>
+</head>
+<body>
+    <h1>Grammar Correction Result</h1>
+    <p><strong>Corrected Text:</strong></p>
+    <p>{{ correct_text }}</p>
+    <p><strong>Corrected Words:</strong></p>
+    <ul>
+        {% for word in corrected_words %}
+            <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Count of Corrected Words:</strong> {{ count }}</p>
+    <a href="/">Go back to input</a>
+</body>
+</html>
